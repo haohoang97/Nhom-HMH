@@ -1,0 +1,309 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Kiểm Tra Trắc Nghiệm</title>
+        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div id="header">
+            <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+                <div class="container text-center">
+                    <div class="container-fluid">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="TrangChu.html">My Test</a>
+                        </div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse navbar-ex1-collapse">
+                            <form class="navbar-form navbar-left text-center" role="search">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Search">
+                                </div>
+                                <button type="submit" class="btn btn-default">Tìm kiếm</button>
+                            </form>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li>
+                                    <a href="TrangChu.html">Trang chủ</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.google.com.vn/">Giới thiệu</a>
+                                </li>
+                                <li>
+                                    <a href="CacBaiKiemTra.html">Các bài kiểm tra</a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Liên hệ<strong class="caret"></strong></a>
+                                    <ul class="dropdown-menu" style="text-align: center">
+                                        <li>
+                                            <a href="https://www.facebook.com/">Facebook</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://accounts.google.com">Gmail</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://twitter.com/">Twitter</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <a href="#" class="btn btn-primary navbar-btn">Đăng nhập</a>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                    </div>
+                </div>
+            </nav>
+        </div>
+        
+        <div id="content">
+            <div id="calltoaction" style="padding-top: 50px">
+                <div class="jumbotron">
+                    <div class="section">
+                        <div id="quizContainer" class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h3 class="text-center text-primary">Bài kiểm tra trắc nghiệm</h3>
+                                </div>
+                            </div>
+                            <div class="row" style="margin: 20px 150px">
+                                <div id="question" class="question"></div>
+                                <hr>
+                                <div class="col-md-6">
+                                    <label class="option"><input type="radio" name="option" value="1" /> <span id="opt1"></span></label>
+                                    <br>
+                                    <br>
+                                    <label class="option"><input type="radio" name="option" value="2" /> <span id="opt2"></span></label>
+                                    <br>
+                                    <br>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="option"><input type="radio" name="option" value="3" /> <span id="opt3"></span></label>
+                                    <br>
+                                    <br>
+                                    <label class="option"><input type="radio" name="option" value="4" /> <span id="opt4"></span></label>
+                                    <br>
+                                    <br>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row text-center">
+                                <div class="btn-group btn-group-lg">
+                                    <a id="start" href="KiemTraTracNghiem.html" class="btn btn-danger">Làm lại</a>
+                                    <a id="prev" href="#" class="btn btn-warning">Câu trước</a>
+                                    <a id="nextButton" href="#" class="btn btn-primary next-button" onclick="loadNextQuestion()">Tiếp tục</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="result" class="container result" style="display:none;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="footer" style="background: #101010">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-10 col-md-offset-1 text-center">
+                        <div class="row footer-margin">
+                            <div class="col-md-4">
+                                <ul class="list-unstyled text-center text-danger">My Test
+                                    <li>
+                                        <a href="TrangChu.html">Trang chủ</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.google.com.vn/">Giới thiệu</a>
+                                    </li>
+                                    <li>
+                                        <a href="CacBaiKiemTra.html">Các Bài Kiểm tra</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.google.com.vn/">Thành tích</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4">
+                                <ul class="list-unstyled text-center text-danger">Thành viên nhóm HMH
+                                    <li>
+                                        <a href="https://www.facebook.com/transachhai97">Trần Sách Hải</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.facebook.com/profile.php?id=100008667461277&fref=ts">Hoàng Duy Hào</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.facebook.com/vuhung009?fref=ts">Vũ Văn Hưng</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.facebook.com/hoangtrong.manh.5?fref=ts">Hoàng Trọng Mạnh</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <ul class="list-inline text-center text-danger">
+                                    <li class="social-title">Liên hệ với chúng tôi</li>
+                                    <br>
+                                    <br>
+                                    <li>
+                                        <i class="fa fa-facebook social-icon"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-google-plus social-icon"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-twitter social-icon"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-dribbble social-icon"></i>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <hr class="footer-margin">
+                        <div class="row footer-margin">
+                            <div class="col-md-12 text-center">
+                                <p>
+                                    <a href="https://www.google.com.vn/">Chính sách bảo mật</a>|
+                                    <a href="https://www.google.com.vn/">Điều khoản sử dụng</a>
+                                </p>
+                                <p class="small text-danger">© Copyright 2017. Nhóm HMH</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <script>
+        
+        var questions = [{
+          "question": "Có một đàn vịt, cho biết 1 con đi trước thì có 2 con đi sau, 1 con đi sau thì có 2 con đi trước, 1 con đi giữa thì có 2 con đi 2 bên. Hỏi đàn vịt đó có mấy con?",
+          "option1": "Một con",
+          "option2": "Hai con",
+          "option3": "Ba con",
+          "option4": "Bốn con",
+          "answer": "3"
+        }, {
+          "question": "Làm thế nào để qua được câu này?",
+          "option1": "Bỏ cuộc",
+          "option2": "Cho tôi qua đi mà",
+          "option3": "Không thể qua",
+          "option4": "Câu này khó quá",
+          "answer": "1"
+        }, {
+          "question": "Sở thú bị cháy, con gì chạy ra đầu tiên?",
+          "option1": "Con chim",
+          "option2": "Con rắn",
+          "option3": "Con người",
+          "option4": "Con tê giác",
+          "answer": "3"
+        }, {
+          "question": "Con Hổ bị xích vào gốc cây, sợi xích dài 30m. Có 1 bụi cỏ cách đấy 31m, làm sao con Hổ ăn được bụi cỏ?",
+          "option1": "Cắn đứt xích",
+          "option2": "Húc đỏ cây",
+          "option3": "Gọi đòng bọn đến",
+          "option4": "Không khả thi",
+          "answer": "4"
+        }, {
+          "question": "Người đẹp Monalisa không có thứ gì?",
+          "option1": "Tiền",
+          "option2": "Chồng",
+          "option3": "Lông chân",
+          "option4": "Lông mày",
+          "answer": "2"
+        }, {
+          "question": " Cha của Ly có 5 người con tên thứ Nhất, thứ Hai, thứ Ba, thứ Năm, hỏi tên của người con thứ 5 là gì?",
+          "option1": "Thứ 6",
+          "option2": "Ly",
+          "option3": "Út",
+          "option4": "Cả",
+          "answer": "2"
+        }, {
+          "question": "Bệnh gì bác sỹ bó tay?",
+          "option1": "HIV",
+          "option2": "Gãy tay",
+          "option3": "Giang mai",
+          "option4": "Bệnh sĩ",
+          "answer": "2"
+        }, {
+          "question": " Có 3 thằng lùn xếp hàng dọc đi vào hang. Thằng đi sau cầm 1 cái xô, thằng đi giữa cầm 1 cái xẻng, hỏi thằng đi trước cầm gì?",
+          "option1": "Cầm đèn",
+          "option2": "Cầm đầu",
+          "option3": "Cầm dao",
+          "option4": "Cầm xẻng",
+          "answer": "2"
+        }, {
+          "question": "Ở Việt Nam, rồng bay ở đâu và đáp ở đâu?",
+          "option1": "Hà Nội và Long An",
+          "option2": "Hà nội và Quảng Ninh",
+          "option3": "Thăng Long và Hạ long",
+          "option4": "Quảng Ninh và Long An",
+          "answer": "3"
+        }, {
+          "question": "Tay cầm cục thịt nắn nắn, tay vỗ mông là đang làm gì?",
+          "option1": "Ăn kẹo",
+          "option2": "Uống CoccaCola",
+          "option3": "Đá bóng",
+          "option4": "Chụp hình",
+          "answer": "4"
+        }];
+
+        var currentQuestion = 0;
+        var score = 0;
+        var totQuestions = questions.length;
+
+        var container = document.getElementById('quizContainer');
+        var questionEl = document.getElementById('question');
+        var opt1 = document.getElementById('opt1');
+        var opt2 = document.getElementById('opt2');
+        var opt3 = document.getElementById('opt3');
+        var opt4 = document.getElementById('opt4');
+        var nextButton = document.getElementById('nextButton');
+        var resultCont = document.getElementById('result');
+
+        function loadQuestion (questionIndex) {
+            var q = questions[questionIndex];
+            questionEl.textContent = (questionIndex + 1) + '. ' + q.question;
+            opt1.textContent = q.option1;
+            opt2.textContent = q.option2;
+            opt3.textContent = q.option3;
+            opt4.textContent = q.option4;
+        };
+
+        function loadNextQuestion () {
+            var selectedOption = document.querySelector('input[type=radio]:checked');
+            if(!selectedOption){
+                alert('Bạn chưa chọn đáp án cho câu hỏi');
+            return;
+            }
+            var answer = selectedOption.value;
+            if(questions[currentQuestion].answer == answer){
+                score += 10;
+            }
+            selectedOption.checked = false;
+            currentQuestion++;
+            if(currentQuestion == totQuestions - 1){
+                nextButton.textContent = 'Finish';
+            }
+            if(currentQuestion == totQuestions){
+                container.style.display = 'none';
+                resultCont.style.display = '';
+                resultCont.textContent = 'Your Score: ' + score;
+            return;
+            }
+            loadQuestion(currentQuestion);
+        }
+
+        loadQuestion(currentQuestion);
+    </script>
+</html>
